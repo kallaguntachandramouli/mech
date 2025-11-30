@@ -1,0 +1,24 @@
+ package automation;
+import java.time.Duration;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+
+
+
+public class Waitmechanism {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver browser=new ChromeDriver();
+		browser.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		browser.manage().window().maximize();
+		browser.get("https://www.hyrtutorials.com/p/waits-demo.html");
+		browser.findElement(By.id("btn2")).click();
+		browser.findElement(By.id("txt2")).sendKeys("hello");
+		
+		
+
+		
+
+	}
+}
