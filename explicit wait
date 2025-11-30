@@ -1,0 +1,22 @@
+package automation;
+import java.time.Duration;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.WebElement;
+
+public class ExplicitWaitmechanism {
+	public static void main(String[] args) throws InterruptedException {
+				WebDriver browser=new ChromeDriver();
+		     WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
+				 browser.manage().window().maximize();
+			  	browser.get("https://www.hyrtutorials.com/p/waits-demo.html");
+				 browser.findElement(By.id("btn2")).click();
+				 //browser.findElement(By.id("txt2")).sendKeys("hello");
+			 	WebElement textbox2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txt2")));
+			  	textbox2.sendKeys("hello");
+			}
+	
+}
